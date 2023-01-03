@@ -12,7 +12,7 @@ export function SavePaste(): JSX.Element{
     const updatePasteTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPasteData(prev => {return {...prev, title: e.target.value}})
     }
-    const updatePasteContent = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const updatePasteContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPasteData(prev => {return {...prev, content: e.target.value}})
     }
     
@@ -22,7 +22,7 @@ export function SavePaste(): JSX.Element{
     return (
         <form onSubmit = {handleSubmit}>
         <input onChange = {updatePasteTitle} placeholder = "Write your title" value = {pasteData.title}/> 
-        <input onChange = {updatePasteContent} placeholder = "Write your content" value = {pasteData.content}/>
+        <textarea required onChange = {updatePasteContent} placeholder = "Write your content" value = {pasteData.content}/>
         <input type = "submit" value="submit"/>
         </form>
     )
