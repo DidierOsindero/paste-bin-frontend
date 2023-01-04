@@ -1,0 +1,43 @@
+/*
+========SavePastesPage=======
+*/
+.ctn-save-pastes-page {
+    text-align: center;
+    margin: 20px
+}
+
+.title-input, .content-input {
+display: block;
+margin: 10px auto;
+}
+
+.title-input {
+    border-radius: 5px;
+    border: solid black 1px;
+}
+
+.content-input {
+    resize: none;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+
+/*
+========ViewPastesPage=======
+*/
+
+.ctn-paste {
+    display:grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.paste {
+    border: solid black 1px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}

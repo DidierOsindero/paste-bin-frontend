@@ -16,18 +16,18 @@ export function SavePaste(): JSX.Element{
         setPasteData(prev => {return {...prev, content: e.target.value}})
     }
     
-    const handleSubmit = () => {
-        axios.post(baseUrl+"/pastes", pasteData)
+    const handleSubmit = async () => {
+        const response = await axios.post(baseUrl+"/pastes", pasteData);
+        console.log(response);
     }
     return (
+        <div className="ctn-save-pastes-page">
         <form onSubmit = {handleSubmit}>
-        <input onChange = {updatePasteTitle} placeholder = "Write your title" value = {pasteData.title}/> 
-        <textarea required onChange = {updatePasteContent} placeholder = "Write your content" value = {pasteData.content}/>
-        <input type = "submit" value="submit"/>
+        <input className="title-input"
+        onChange = {updatePasteTitle} placeholder = "Write your title" value = {pasteData.title}/> 
+        <textarea className="content-input" required onChange = {updatePasteContent} placeholder = "Write your content" value = {pasteData.content}/>
+        <input className="input-submit" type = "submit" value="submit"/>
         </form>
+        </div>
     )
 }
-
-// setMyState(prev => prev+1)
-// const myObj = {name : maria, surname: ten sierra}
-// setMyObject(prev => {...prev, name : didier})

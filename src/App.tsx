@@ -1,5 +1,8 @@
 import { SavePaste } from "./components/SavePastePage";
-import { greet } from "./utils/greet";
+import { ViewPastesPage } from "./components/ViewPastesPage";
+import "./App.css";
+
+
 
 
 export const baseUrl = process.env.NODE_ENV === "production"
@@ -7,7 +10,11 @@ export const baseUrl = process.env.NODE_ENV === "production"
 : "http://localhost:4000"
 
 function App(): JSX.Element {
-  return <SavePaste/>
+  return (
+  <>
+  <SavePaste/>
+<ViewPastesPage/>
+  </>)
 }
 
 export default App;
