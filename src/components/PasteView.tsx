@@ -12,11 +12,11 @@ export function PasteView({paste}: PasteViewProps): JSX.Element{
     return (
         <>
          <div className="paste">
-        <h1>
-            {paste.title}
-        </h1>
-        {showMore ? (<><p>{paste.content}</p><div onClick = {() => setShowMore(false)}>...less</div></>): (<>
-        <p>{paste.content}</p>
+       
+            {paste.title ? <h1>{paste.title}</h1> :<br></br>}
+        
+        {showMore ? (<><p className = "paste-complete">{paste.content}</p><div onClick = {() => setShowMore(false)}>...less</div></>): (<>
+        <p className = "paste-reduced">{paste.content}</p>
         <div onClick = {() => setShowMore(true)}>...more</div></>)}
         <small>Date: {paste.time.substring(0,10)}, Time: {paste.time.substring(11,16)}</small>
         </div>

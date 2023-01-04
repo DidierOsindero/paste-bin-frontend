@@ -34,10 +34,21 @@ margin: 10px auto;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+/*
+========PasteView=======
+*/
+
 .paste {
     border: solid black 1px;
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
     text-align: center;
+}
+.paste-complete {
+    height: auto;
+}
+.paste-reduced {
+    overflow: hidden;
+    height: 97px
 }
