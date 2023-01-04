@@ -42,7 +42,12 @@ export function SavePaste(): JSX.Element {
           placeholder="Write your content"
           value={pasteData.content}
         />
-        <input className="input-submit" type="submit" value="submit" disabled={pasteData.content.trim() === ""}/>
+        <input
+          className="input-submit"
+          type="submit"
+          value="submit"
+          disabled={pasteData.content.trim() === ""}
+        />
       </form>
     </div>
   );

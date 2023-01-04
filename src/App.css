@@ -2,36 +2,36 @@
 ========SavePastesPage=======
 */
 .ctn-save-pastes-page {
-    text-align: center;
-    margin: 20px
+  text-align: center;
+  margin: 20px;
 }
 
-.title-input, .content-input {
-display: block;
-margin: 10px auto;
+.title-input,
+.content-input {
+  display: block;
+  margin: 10px auto;
 }
 
 .title-input {
-    border-radius: 5px;
-    border: solid black 1px;
+  border-radius: 5px;
+  border: solid black 1px;
 }
 
 .content-input {
-    resize: none;
-    width: 200px;
-    padding: 10px 20px;
-    border-radius: 20px;
+  resize: none;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
-
 
 /*
 ========ViewPastesPage=======
 */
 
 .ctn-paste {
-    display:grid;
-    margin-top: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /*
@@ -39,16 +39,23 @@ margin: 10px auto;
 */
 
 .paste {
-    border: solid black 1px;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto auto 20px;
 }
+
 .paste-complete {
-    height: auto;
+  min-height: 91px;
 }
 .paste-reduced {
-    overflow: hidden;
-    height: 97px
+  overflow: hidden;
+  height: 91px;
+}
+
+.more-less-btn {
+  color: blueviolet;
 }
