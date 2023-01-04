@@ -1,8 +1,9 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { baseUrl } from "../App";
+import { PasteView } from "./PasteView";
 
-interface IPaste {
+export interface IPaste {
     id: string;
     title: string;
     content: string; 
@@ -24,16 +25,10 @@ export function ViewPastesPage(): JSX.Element{
     console.log("TIME", pasteArray[0])
 
     return (
-        <div className="ctn-paste">
+       <div className="ctn-paste">
         {pasteArray.map((paste, index) => {
             return (
-                <div key={index} className="paste">
-                    <h1>
-                        {paste.title}
-                    </h1>
-                    <p>{paste.content}</p>
-                    <small>Date: {paste.time.substring(0,10)}, Time: {paste.time.substring(11,16)}</small>
-                </div>
+               <PasteView paste={paste} key = {paste.id}/>
             )
         })}
         </div>

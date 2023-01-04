@@ -16,9 +16,8 @@ export function SavePaste(): JSX.Element{
         setPasteData(prev => {return {...prev, content: e.target.value}})
     }
     
-    const handleSubmit = async () => {
-        const response = await axios.post(baseUrl+"/pastes", pasteData);
-        console.log(response);
+    const handleSubmit = ()=> {
+        axios.post(baseUrl+"/pastes", pasteData);
     }
     return (
         <div className="ctn-save-pastes-page">
