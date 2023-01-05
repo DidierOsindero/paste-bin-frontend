@@ -23,11 +23,16 @@ export function ViewPastesPage(): JSX.Element {
     getRecentPastes();
   }, []);
 
-
   return (
     <div className="ctn-paste">
       {pasteArray.map((paste, index) => {
-        return <PasteView paste={paste} key={paste.id} getRecentPastes={getRecentPastes}/>;
+        return (
+          <PasteView
+            paste={paste}
+            key={paste.id}
+            getRecentPastes={getRecentPastes}
+          />
+        );
       })}
     </div>
   );

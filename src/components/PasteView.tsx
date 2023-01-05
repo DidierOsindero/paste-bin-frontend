@@ -8,12 +8,15 @@ interface PasteViewProps {
   getRecentPastes: () => void;
 }
 
-export function PasteView({ paste, getRecentPastes }: PasteViewProps): JSX.Element {
+export function PasteView({
+  paste,
+  getRecentPastes,
+}: PasteViewProps): JSX.Element {
   const [showMore, setShowMore] = useState<boolean>(false);
   const handleDeletePaste = async () => {
-    await axios.delete(baseUrl + "/pastes/" + paste.id)
+    await axios.delete(baseUrl + "/pastes/" + paste.id);
     getRecentPastes();
-  }
+  };
   console.log(paste.content);
   return (
     <>
@@ -47,7 +50,9 @@ export function PasteView({ paste, getRecentPastes }: PasteViewProps): JSX.Eleme
             {paste.time.substring(11, 16)}
           </small>
         </>
-        <button className = "del-btn" onClick = {handleDeletePaste} >Delete</button>
+        <button className="del-btn" onClick={handleDeletePaste}>
+          Delete
+        </button>
       </div>
     </>
   );

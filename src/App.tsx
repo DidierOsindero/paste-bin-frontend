@@ -1,6 +1,7 @@
 import { SavePaste } from "./components/SavePastePage";
 import { ViewPastesPage } from "./components/ViewPastesPage";
 import "./App.css";
+import { CommentView } from "./components/CommentView";
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
@@ -12,6 +13,7 @@ function App(): JSX.Element {
     <>
       <SavePaste />
       <ViewPastesPage />
+      <CommentView pasteId={"5"} />
     </>
   );
 }

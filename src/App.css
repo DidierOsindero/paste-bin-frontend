@@ -61,3 +61,18 @@
 .more-less-btn {
   color: blueviolet;
 }
+
+/*
+=========CommentView==========
+*/
+
+.ctn-comment-view {
+  text-align: center;
+}
+
+.comment-input {
+  resize: none;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
