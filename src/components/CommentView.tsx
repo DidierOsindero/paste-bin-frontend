@@ -26,9 +26,11 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
     const {data} = await axios.get(baseUrl + "/pastes/" + pasteId+ "/comments")
     setRecentComments(data)
   }
-  // const handleDeleteComment = () =>{
-  //   axios.delete(baseUrl + "/pastes/"+ )
-  // }
+  const handleDeleteComment = async(commentId: string) =>{
+    await axios.delete(baseUrl + "/pastes/"+ pasteId + "/comments/"+ commentId);
+    await getComments()
+    console.log(typeof commentId)
+  }
   useEffect(() => {
     const getRecentComments = async () => {
       const { data } = await axios.get(
@@ -64,7 +66,7 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
             <p key={comment.id}>
               <h3>{comment.id}</h3>
               <p>{comment.comment} </p>
-              <button>🗑️</button>
+              <button onClick = {()=>handleDeleteComment(comment.id)}>🗑️</button>
               <span>
                 Date: {comment.time.substring(0, 10)}, Time:{" "}
                 {comment.time.substring(11, 16)}
