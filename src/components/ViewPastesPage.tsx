@@ -1,39 +1,22 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { baseUrl } from "../App";
-import { CommentView } from "./CommentView";
+
+import { IPaste, View } from "./MainContent";
 import { PasteView } from "./PasteView";
 
-export interface IPaste {
-  id: string;
-  title: string;
-  content: string;
-  time: string;
+
+
+interface ViewPastesPageProps {
+  view: View;
+  setView: React.Dispatch<React.SetStateAction<View>>;
+  pasteArray: IPaste[];
+  getRecentPastes: () => void;
+  handleViewPasteComments: (clickedPasteId: string) => void;
 }
-type View = "CommentView" | "PasteView"
 
-export function ViewPastesPage(): JSX.Element {
-  const [pasteArray, setPasteArray] = useState<IPaste[]>([]);
-  const [view, setView] = useState<View>("PasteView");
-  const [currentPasteId, setCurrentPasteId] = useState<string>("");
-  // useEffect (()=>{
+export function ViewPastesPage({view, setView, pasteArray, getRecentPastes, handleViewPasteComments}: ViewPastesPageProps): JSX.Element {
+  
+  
 
-  // }, [])
 
-  const handleViewPasteComments = (clickedPasteId: string) => {
-    setView("CommentView");
-    setCurrentPasteId(clickedPasteId);
-  }
-  async function getRecentPastes() {
-    const response = await axios.get(baseUrl + "/pastes");
-    const data = response.data;
-    setPasteArray(data);
-  }
-
-  useEffect(() => {
-    getRecentPastes();
-  }, []);
-  if (view === "PasteView"){
     return (
     <div className="ctn-paste">
     {pasteArray.map((paste, index) => {
@@ -48,8 +31,6 @@ export function ViewPastesPage(): JSX.Element {
     })}
   </div>
     )
-} else{ return(
-<CommentView pasteId={currentPasteId}/>)
-}
+
   }
 

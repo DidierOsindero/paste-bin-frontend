@@ -1,7 +1,5 @@
-import { SavePaste } from "./components/SavePastePage";
-import { ViewPastesPage } from "./components/ViewPastesPage";
 import "./App.css";
-import { CommentView } from "./components/CommentView";
+import { MainContent } from "./components/MainContent";
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
@@ -11,9 +9,7 @@ export const baseUrl =
 function App(): JSX.Element {
   return (
     <>
-      <SavePaste />
-      
-      <ViewPastesPage />
+      <MainContent />
     </>
   );
 }

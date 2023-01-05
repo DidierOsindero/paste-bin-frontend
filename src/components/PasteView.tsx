@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { baseUrl } from "../App";
-import { IPaste } from "./ViewPastesPage";
+import { IPaste } from "./MainContent";
 
 interface PasteViewProps {
   paste: IPaste;
