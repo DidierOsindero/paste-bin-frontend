@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useState } from "react";
+import { baseUrl } from "../App";
 import { IPaste } from "./ViewPastesPage";
 
 interface PasteViewProps {
@@ -7,7 +9,11 @@ interface PasteViewProps {
 
 export function PasteView({ paste }: PasteViewProps): JSX.Element {
   const [showMore, setShowMore] = useState<boolean>(false);
+  const handleDeletePaste = async () => {
+    await axios.delete(baseUrl + "/pastes/" + paste.id)
+    await axios.get(baseUrl + "/pastes/")
 
+  }
   console.log(paste.content);
   return (
     <>
@@ -41,6 +47,7 @@ export function PasteView({ paste }: PasteViewProps): JSX.Element {
             {paste.time.substring(11, 16)}
           </small>
         </>
+        <button className = "del-btn" onClick = {handleDeletePaste} >Delete</button>
       </div>
     </>
   );

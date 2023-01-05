@@ -37,7 +37,9 @@
 /*
 ========PasteView=======
 */
-
+.del-btn {
+  border-radius: 10px;
+}
 .paste {
   border: solid black 1px;
   border-radius: 10px;
