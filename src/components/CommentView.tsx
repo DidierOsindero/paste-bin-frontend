@@ -15,7 +15,20 @@ interface CommentData {
 export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
   const [commentInput, setCommentInput] = useState<string>("");
   const [recentComments, setRecentComments] = useState<CommentData[]>([]);
-
+  const handleSubmitComment = async(e: React.FormEvent<HTMLFormElement>) =>{
+    e.preventDefault() // that will stop page from refreshing
+    await axios.post(baseUrl + "/pastes/"+ pasteId + "/comments", {comment: commentInput})
+    await getComments()
+    setCommentInput("")
+    //no going back to paste view but same page with new comment 
+  }
+  const getComments= async() =>{
+    const {data} = await axios.get(baseUrl + "/pastes/" + pasteId+ "/comments")
+    setRecentComments(data)
+  }
+  // const handleDeleteComment = () =>{
+  //   axios.delete(baseUrl + "/pastes/"+ )
+  // }
   useEffect(() => {
     const getRecentComments = async () => {
       const { data } = await axios.get(
@@ -28,7 +41,7 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
 
   return (
     <div className="ctn-comment-view">
-      <form>
+      <form onSubmit = {(e)=>handleSubmitComment(e)}>
         <textarea
           className="comment-input"
           onChange={(e) => setCommentInput(e.target.value)}
