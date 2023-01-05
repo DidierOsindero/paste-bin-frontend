@@ -5,14 +5,14 @@ import { IPaste } from "./ViewPastesPage";
 
 interface PasteViewProps {
   paste: IPaste;
+  getRecentPastes: () => void;
 }
 
-export function PasteView({ paste }: PasteViewProps): JSX.Element {
+export function PasteView({ paste, getRecentPastes }: PasteViewProps): JSX.Element {
   const [showMore, setShowMore] = useState<boolean>(false);
   const handleDeletePaste = async () => {
     await axios.delete(baseUrl + "/pastes/" + paste.id)
-    await axios.get(baseUrl + "/pastes/")
-
+    getRecentPastes();
   }
   console.log(paste.content);
   return (

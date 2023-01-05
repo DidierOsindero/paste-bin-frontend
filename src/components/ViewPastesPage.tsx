@@ -22,12 +22,12 @@ export function ViewPastesPage(): JSX.Element {
   useEffect(() => {
     getRecentPastes();
   }, []);
-  console.log("TIME", pasteArray[0]);
+
 
   return (
     <div className="ctn-paste">
       {pasteArray.map((paste, index) => {
-        return <PasteView paste={paste} key={paste.id} />;
+        return <PasteView paste={paste} key={paste.id} getRecentPastes={getRecentPastes}/>;
       })}
     </div>
   );
