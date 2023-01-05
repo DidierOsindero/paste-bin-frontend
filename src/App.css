@@ -39,13 +39,23 @@
 */
 .del-btn {
   border-radius: 10px;
+  float:left;
+  margin-right: 10px;
 }
+
+.comment-btn{
+  border-radius: 10px;
+  float: left;
+}
+
 .paste {
   border: solid black 1px;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
   text-align: center;
+}
+.paste-grid {
   display: grid;
   grid-template-rows: auto auto 20px;
 }
