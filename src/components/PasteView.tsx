@@ -6,21 +6,26 @@ import { IPaste } from "./ViewPastesPage";
 interface PasteViewProps {
   paste: IPaste;
   getRecentPastes: () => void;
+  handleViewPasteComments: (pasteId: string) => void;
 }
+
 
 export function PasteView({
   paste,
   getRecentPastes,
+  handleViewPasteComments
 }: PasteViewProps): JSX.Element {
   const [showMore, setShowMore] = useState<boolean>(false);
+ 
+
   const handleDeletePaste = async () => {
     await axios.delete(baseUrl + "/pastes/" + paste.id);
     getRecentPastes();
   };
-  console.log(paste.content);
   return (
     <>
-      <div className="paste">
+    <div className="paste">
+      <div className = "paste-grid">
         {paste.title ? <h1>{paste.title}</h1> : <br></br>}
 
         {!showMore && (
@@ -50,9 +55,13 @@ export function PasteView({
             {paste.time.substring(11, 16)}
           </small>
         </>
+        </div>
+        <div>
         <button className="del-btn" onClick={handleDeletePaste}>
-          Delete
+        🗑️
         </button>
+        <button className = "comment-btn" onClick = {()=>handleViewPasteComments(paste.id)}>💬</button>
+      </div>
       </div>
     </>
   );

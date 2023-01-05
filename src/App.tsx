@@ -12,8 +12,8 @@ function App(): JSX.Element {
   return (
     <>
       <SavePaste />
+      
       <ViewPastesPage />
-      <CommentView pasteId={"5"} />
     </>
   );
 }
