@@ -1,3 +1,8 @@
+body{
+  margin:0;
+}
+
+
 /*
 ========SavePastesPage=======
 */
@@ -85,4 +90,21 @@
   width: 200px;
   padding: 10px 20px;
   border-radius: 20px;
+}
+
+/*
+=======Header=======
+*/
+.header-div{
+  background-color: rgb(49, 46, 46);
+  text-align: center;
+}
+
+.pastes-title{
+  color: whitesmoke;
+}
+
+.pastes-title:hover{
+  cursor: pointer;
+  color: rgb(199, 197, 197)
 }
