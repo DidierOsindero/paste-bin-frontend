@@ -1,10 +1,9 @@
 import axios from "axios";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { baseUrl } from "../App";
 import { CommentView } from "./CommentView";
 import { SavePaste } from "./SavePastePage";
 import { ViewPastesPage } from "./ViewPastesPage";
-import {BrowserRouter, Route, Routes,} from "react-router-dom";
 import { Header } from "./Header";
 
 

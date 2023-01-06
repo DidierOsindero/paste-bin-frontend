@@ -26,7 +26,7 @@ export function PasteView({
     <>
     <div className="paste">
       <div className = "paste-grid">
-        {paste.title ? <h1>{paste.title}</h1> : <br></br>}
+        {paste.title ? <h1>{paste.title}</h1> : <h1>{" "}</h1>}
 
         {!showMore && (
           <>
@@ -49,14 +49,13 @@ export function PasteView({
             </div>
           </>
         )}
-        <>
-          <small className = "date-time">
+      
+        </div>
+        <div className="ctn-paste-btns">
+        <small className = "paste-date-time">
             {paste.time.substring(0, 10)} {" "}
             {paste.time.substring(11, 16)}
             </small>
-        </>
-        </div>
-        <div>
         <button className="del-btn" onClick={handleDeletePaste}>
         🗑️
         </button>
