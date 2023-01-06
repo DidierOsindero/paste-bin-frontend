@@ -1,9 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { baseUrl } from "../App";
 import { CommentView } from "./CommentView";
 import { SavePaste } from "./SavePastePage";
 import { ViewPastesPage } from "./ViewPastesPage";
+import {BrowserRouter, Route, Routes,} from "react-router-dom";
+import { Header } from "./Header";
+
 
 export type View = "CommentView" | "PasteView"
 export interface IPaste {
@@ -35,6 +38,7 @@ export function MainContent(): JSX.Element {
   if (view === "PasteView") {
     return (
     <>
+      <Header setView={setView}/>
         <SavePaste /> 
         <ViewPastesPage view={view} setView={setView} pasteArray={pasteArray} getRecentPastes={getRecentPastes} handleViewPasteComments={handleViewPasteComments}/>
         
@@ -43,6 +47,7 @@ export function MainContent(): JSX.Element {
 } else {
     return (
     <>
+    <Header setView={setView}/>
         <CommentView pasteId={currentPasteId}/>
     </>
     );
