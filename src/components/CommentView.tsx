@@ -63,15 +63,17 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
       <div className="ctn-recent-comments">
         {recentComments.map((comment) => {
           return (
-            <p key={comment.id}>
-              <h3>{comment.id}</h3>
-              <p>{comment.comment} </p>
-              <button onClick = {()=>handleDeleteComment(comment.id)}>🗑️</button>
-              <span>
-                Date: {comment.time.substring(0, 10)}, Time:{" "}
+            <div  key={comment.id}>
+              <p className = "text-comment">💬 {comment.comment} 
+                <span>
+                  <small className = "date-time">
+                {comment.time.substring(0, 10)} {" "}
                 {comment.time.substring(11, 16)}
-              </span>
-            </p>
+                  </small>
+                </span>
+              </p>
+              <button className = "del-btn-comment" onClick = {()=>handleDeleteComment(comment.id)}> 🗑️</button>
+            </div>
           );
         })}
       </div>

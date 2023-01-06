@@ -92,6 +92,22 @@ body{
   border-radius: 20px;
 }
 
+.ctn-recent-comments{
+  display: inline;
+  width: 50px;
+}
+
+.date-time{
+  font-style: italic;
+}
+.text-comment{
+  display: inline-block;
+}
+.del-btn-comment{
+  margin-left: 10px;
+  display: inline-block;
+}
+
 /*
 =======Header=======
 */

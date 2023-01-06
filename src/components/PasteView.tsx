@@ -50,10 +50,10 @@ export function PasteView({
           </>
         )}
         <>
-          <small>
-            Date: {paste.time.substring(0, 10)}, Time:{" "}
+          <small className = "date-time">
+            {paste.time.substring(0, 10)} {" "}
             {paste.time.substring(11, 16)}
-          </small>
+            </small>
         </>
         </div>
         <div>
