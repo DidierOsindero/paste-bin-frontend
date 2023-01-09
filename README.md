@@ -11,13 +11,13 @@ Paste bin with functionality to comment on pastes and delete pastes/comments
 
 ## Getting started
 
-### Install dependencies
+#### Install dependencies
 
 ```
 yarn
 ```
 
-### Run app locally
+#### Run app locally
 
 ```
 yarn start
