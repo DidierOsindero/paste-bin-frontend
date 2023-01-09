@@ -128,11 +128,11 @@ body {
 }
 
 .paste-complete {
-  min-height: 91px;
+  min-height: 78px;
 }
 .paste-reduced {
   overflow: hidden;
-  height: 91px;
+  height: 78px;
 }
 
 .more-less-btn {
