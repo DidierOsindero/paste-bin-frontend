@@ -29,25 +29,14 @@ export function PasteView({
           {!showMore && (
             <>
               <p className="paste-reduced">{paste.content}</p>
-              {paste.content.length > 450 ? (
-                <div
-                  className="more-less-btn"
-                  onClick={() => setShowMore(true)}
-                >
-                  ...more
-                </div>
-              ) : (
-                <br />
-              )}
+              <br />
             </>
           )}
 
           {showMore && (
             <>
               <p className="paste-complete">{paste.content}</p>
-              <div onClick={() => setShowMore(false)} className="more-less-btn">
-                ...less
-              </div>
+              <br />
             </>
           )}
         </div>
@@ -64,6 +53,16 @@ export function PasteView({
           >
             💬
           </button>
+          {paste.content.length > 450 && !showMore && (
+            <button className="comment-btn" onClick={() => setShowMore(true)}>
+              🔽
+            </button>
+          )}
+          {showMore && (
+            <button className="comment-btn" onClick={() => setShowMore(false)}>
+              🔼
+            </button>
+          )}
         </div>
       </div>
     </>

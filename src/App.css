@@ -86,12 +86,10 @@ body {
 /*
 ========PasteView=======
 */
-.del-btn {
-  margin-right: 10px;
-}
 
 .del-btn,
 .comment-btn {
+  margin-right: 10px;
   background-color: inherit;
   border: solid rgba(214, 214, 214, 0.685) 1px;
   border-radius: 10px;
@@ -128,11 +126,11 @@ body {
 }
 
 .paste-complete {
-  min-height: 91px;
+  min-height: 79px;
 }
 .paste-reduced {
   overflow: hidden;
-  height: 91px;
+  height: 79px;
 }
 
 .more-less-btn {
