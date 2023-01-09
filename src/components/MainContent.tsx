@@ -6,14 +6,13 @@ import { SavePaste } from "./SavePastePage";
 import { ViewPastesPage } from "./ViewPastesPage";
 import { Header } from "./Header";
 
-
-export type View = "CommentView" | "PasteView"
+export type View = "CommentView" | "PasteView";
 export interface IPaste {
-    id: string;
-    title: string;
-    content: string;
-    time: string;
-  }
+  id: string;
+  title: string;
+  content: string;
+  time: string;
+}
 
 export function MainContent(): JSX.Element {
   const [view, setView] = useState<View>("PasteView");
@@ -23,7 +22,7 @@ export function MainContent(): JSX.Element {
   const handleViewPasteComments = (clickedPasteId: string) => {
     setView("CommentView");
     setCurrentPasteId(clickedPasteId);
-  }
+  };
   async function getRecentPastes() {
     const response = await axios.get(baseUrl + "/pastes");
     const data = response.data;
@@ -36,19 +35,24 @@ export function MainContent(): JSX.Element {
 
   if (view === "PasteView") {
     return (
-    <>
-      <Header setView={setView}/>
-        <SavePaste /> 
-        <ViewPastesPage view={view} setView={setView} pasteArray={pasteArray} getRecentPastes={getRecentPastes} handleViewPasteComments={handleViewPasteComments}/>
-        
-    </>
+      <>
+        <Header setView={setView} />
+        <SavePaste />
+        <ViewPastesPage
+          view={view}
+          setView={setView}
+          pasteArray={pasteArray}
+          getRecentPastes={getRecentPastes}
+          handleViewPasteComments={handleViewPasteComments}
+        />
+      </>
     );
-} else {
+  } else {
     return (
-    <>
-    <Header setView={setView}/>
-        <CommentView pasteId={currentPasteId}/>
-    </>
+      <>
+        <Header setView={setView} />
+        <CommentView pasteId={currentPasteId} />
+      </>
     );
-} 
   }
+}
