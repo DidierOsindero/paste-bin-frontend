@@ -7,6 +7,6 @@ interface HeaderProps{
 
 export function Header({setView}: HeaderProps): JSX.Element {
   return(<div className = "header-div">
-  <h1 className = "pastes-title" onClick={()=>setView("PasteView")}>All Pastes</h1>
+  <h1 className = "pastes-title" onClick={()=>setView("PasteView")}>Paste Bin</h1>
   </div>)
 }

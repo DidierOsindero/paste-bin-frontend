@@ -45,7 +45,7 @@ export function SavePaste(): JSX.Element {
         <input
           className="input-submit"
           type="submit"
-          value="submit"
+          value="+"
           disabled={pasteData.content.trim() === ""}
         />
       </form>

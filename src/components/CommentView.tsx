@@ -55,7 +55,7 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
         <input
           className="submit-comment"
           type="submit"
-          value="submit"
+          value="+"
           disabled={commentInput.trim() === ""}
         />
       </form>
@@ -64,7 +64,7 @@ export function CommentView({ pasteId }: CommentViewProps): JSX.Element {
         {recentComments.map((comment) => {
           return (
             <div  key={comment.id}>
-              <p className = "text-comment">💬 {comment.comment} 
+              <p className = "text-comment">💬 {comment.comment}{" - "} 
                 <span>
                   <small className = "date-time">
                 {comment.time.substring(0, 10)} {" "}
