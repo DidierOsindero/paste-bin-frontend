@@ -29,7 +29,7 @@ export function PasteView({
           {!showMore && (
             <>
               <p className="paste-reduced">{paste.content}</p>
-              {paste.content.length > 450 ? (
+              {paste.content.length > 211 ? (
                 <div
                   className="more-less-btn"
                   onClick={() => setShowMore(true)}
